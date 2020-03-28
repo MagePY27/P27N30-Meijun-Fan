@@ -8,7 +8,7 @@
 
 
 
-# Django 学习之路
+# Django 学习
 
 ## 第一章 环境准备
 
@@ -16,18 +16,30 @@
 
 1. #### 安装pyenv并创建虚拟环境
 
-   ``````shell
-   # 安装pyenv python环境
-   brew update
-   brew install pyenv
-   #安装python环境，根据自己需要安装对应版本
-   pyenv install 3.6.10
-   #安装 virtualenv 虚拟环境
-   brew install pyenv-virtualenv
-   #利用pyenv的虚拟环境，创建python虚拟环境
-   pyenv virtualenv 3.6.10 devops-3610
-   #进入项目目录后可指定项目使用的虚拟环境
-   cd $projet && pyenv local devops-3610
+   ``````
+wget https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz
+
+tar xvf Python-3.6.8.tgz
+Python-3.6.8
+
+./configure --prefix=/usr/local/python3
+make
+make install
+cd ~
+vim .pip/pip.conf
+cd /usr/local/python3/bin/
+
+./pip3 install virtualenv
+
+创建虚拟环境
+/usr/local/python3/bin/virtualenv -p /usr/local/python3/bin/python3 venv3
+
+
+进入虚拟隔离环境
+source venv3/bin/activate
+
+退出隔离环境
+deactivate
    ``````
 
 2. #### Django初识
