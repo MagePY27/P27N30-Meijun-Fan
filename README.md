@@ -16,7 +16,8 @@
 
 1. #### 安装pyenv并创建虚拟环境
 
-   ```wget https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz
+   ```shell
+wget https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz
 
 tar xvf Python-3.6.8.tgz
 Python-3.6.8
