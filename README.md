@@ -16,7 +16,7 @@
 
 1. #### 安装pyenv并创建虚拟环境
 
-   ``````wget https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz
+   ```wget https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz
 
 tar xvf Python-3.6.8.tgz
 Python-3.6.8
@@ -39,7 +39,7 @@ source venv3/bin/activate
 
 退出隔离环境
 deactivate
-   ``````
+   ```
 
 2. #### Django初识
 
