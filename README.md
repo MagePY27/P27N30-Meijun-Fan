@@ -42,10 +42,10 @@ source venv3/bin/activate
 deactivate
    ```
 
-2. #### Django初识
+2. #### 初识Django
 
    ```shell
-   #创建Django项目 版本2.2
+   #安装Django 版本2.2 并创建项目
    cd $projet && pip install Django==2.2.0
    django-admin startproject devops
    #查看目录层级
@@ -68,17 +68,17 @@ deactivate
 1. #### 数据库配置修改
 
    ```shell
-   #修改访问权限，全部地址可以访问
+   #修改bind地址可以访问
    ALLOWED_HOSTS = ["*"] 
    #编辑settings.py 修改数据库信息
    DATABASES = {
        'default': {
-           'ENGINE': 'django.db.backends.mysql',#使用的数据库
+           'ENGINE': 'django.db.backends.mysql',#使用的数据库类型
            'NAME': 'devops',#数据库名
-           'HOST': '39.106.16.255',#数据库地址
+           'HOST': '192.168.56.128',#数据库地址
            'POST': '3306',#数据库端口
-           'USER': 'fanxuefei',#数据库用户名
-           'PASSWORD': '123456',#数据库密码
+           'USER': 'devops',#数据库用户名
+           'PASSWORD': 'devops',#数据库密码
    
        }
    }
@@ -123,7 +123,7 @@ deactivate
          'django.contrib.sessions',
          'django.contrib.messages',
          'django.contrib.staticfiles',
-         'hello.apps.HelloConfig', #注册 hello APP
+         'hello.apps.HelloConfig',          #注册 hello APP，注意末尾逗号
      ]
      ```
 
@@ -154,8 +154,8 @@ deactivate
      from . import views
      
      urlpatterns = {
-        # path('hello/', views.index, name='index'),#访问模式ip/hello/hello多子路由
-       	path('', views.index, name='index') #访问模式ip/hello 子路由直接访问
+        # path('hello/', views.index, name='index'),#访问ip:port/hello/hello多子路由
+       	path('', views.index, name='index')   #访问ip:port/hello 子路由直接访问
      }
      
   ```
@@ -169,13 +169,13 @@ deactivate
      from django.http import HttpResponse
      
      def index(request):
-         return HttpResponse("<p>Hello World Django!!!</p>")#访问hello接口返回字符串
+         return HttpResponse("<p>Hello World Hello Django!</p>")#访问hello接口返回字符串
   ```
    
 - 启动项目并测试访问结果
    
      ```shell
-     cd $projet/ && python manage.py runserver 0.0.0.0:8080
+     cd $projet/ && python manage.py runserver 0.0.0.0:8000
      #启动项目后浏览器访问本地ip接口
   ```
 
